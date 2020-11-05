@@ -368,7 +368,7 @@ public class SiliCompressor {
                 e.printStackTrace();
             }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && false) {
 
                 String fileName = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".jpg";
                 ContentValues values = new ContentValues();
