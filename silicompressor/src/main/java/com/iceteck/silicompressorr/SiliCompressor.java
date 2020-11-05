@@ -374,7 +374,7 @@ public class SiliCompressor {
                 ContentValues values = new ContentValues();
                 values.put(MediaStore.Images.Media.DISPLAY_NAME, fileName);
                 values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
-                values.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/SiliCompressor/");
+                values.put(MediaStore.Images.Media.RELATIVE_PATH, destDirectory.path);
                 values.put(MediaStore.Images.Media.IS_PENDING, 1);
 
                 Uri collection = MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
@@ -388,7 +388,7 @@ public class SiliCompressor {
                 values.put(MediaStore.Images.Media.IS_PENDING, 0);
                 mContext.getContentResolver().update(resultUri, values, null, null);
 
-                return resultUri.toString();
+                return destDirectory.path + "\" +fileName;
 
             } else {
                 String filename = getFilename(uriString, destDirectory);
